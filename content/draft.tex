@@ -1,3 +1,4 @@
+% vim: textwidth=80
 The topic for this masters thesis is \enquote{Event Based Storage of Geospatial
 Vector Data}. The questions asked are:
 
@@ -7,10 +8,19 @@ Vector Data}. The questions asked are:
 \item What are the differences from the traditional \enquote{snapshot} model?
 \item How do we measure the benefits of the storage footprint of this data?  
 \end{itemize}
-Geospatial vector data \todo[noline, size=\tiny]{define \enquote{geospatial vector data}} has
-traditionallybeen distributed as snapshot datasets. This means that the data
-is distributed as complete datasets between two versions of the data, even
-though only a small part of the data has changed.
+Geospatial vector data \todo[noline, size=\tiny]{define \enquote{geospatial
+vector data}} has traditionallybeen distributed as snapshot datasets. This means
+that the data is distributed as complete datasets between two versions of the
+data, even though only a small part of the data has changed.
+
+% \todo[inline]{Assume that we are using an event based model of distributing
+% data. What are the differences depending on the perspectives of
+% \begin{itemize}
+%   \item a map data distributor
+%   \item a map maker
+%   \item a map service provider
+%   \item a map service consumer
+% \end{itemize}}
 
 % NOTE:
 % • Snapshot vs event based
@@ -42,15 +52,34 @@ our ability to tell stories, both fictional and factual, are one of the most
 important attributes that set us apart from other animals during our cognitive
 evolution, more than \todo{fact-check} 40.000 years ago. This ability to tell and
 believe in stories made it possible for large groups of humans to cooperate, and
-build the highly organized society we live in, in the modern day.
+build the highly organized society we live in, in the modern day. The map has
+undoubtedly been one of the most important tools for this cooperation.
+
+With the establishment of information science as a field of study by scholars
+such as Harry Nyquist and Ralph Hartley during the 20s, and expanded upon by
+Claude Shannon during the 40s, and the development of computer technology during
+the 50s and 60s, \acr{gisc} saw its first explorations during this time.
+Roger Tomlinson, a Canadian geographer, is counted by many as one of the
+pioneers in this field of study.
+
+The 70s saw further advanecment of hardware and software made for spatial
+analysis, and in the 80s the personal computer proliferated and made
+computers with \acr{gis} more accessible.
+
+In the 90s \acr{gps} and remote sensing became more integrated with
+\acr{gis}, and accurate and real-time data collection became a thing.
+The internet played a crutial role in the dissemination of geographic
+information, and started the democratization of geographic data. One important
+service in this regard is \acr{osm}.
+
+The 2000s saw the proliferation of web-based mapping services, and the use of
+\acr{gis} in fields such as epidemiology, transportation planning etc.
+The use of \acr{gis} has become widespread in government, business and
+academia.
+
+Today, \acr{ai}
 
 % NOTE:
-% • The description of information science and computer technology. Exploration
-% of using computers for mapping and spatial analysis.
-% • Roger Tomlinson and the pioneering of GISc.
-% • Advance of hardware and software for spatial analysis during the 70s and
-% 80s.
-% • Introduction of personal computers mad GIS tech more accessible.
 % • 90s, integration with GPS and remote sensin. Accurate and real-time data
 % collection. The advent of the internet played a crutial role in the
 % dissemination of geographic information. Web-based mapping, democratization of
@@ -58,3 +87,116 @@ build the highly organized society we live in, in the modern day.
 % • 2000s, proliferation of web-based mapping services. Epidemiology,
 % transportation planning etc. Government, business and academia.
 % • Artificial intelligence, big data analytics and augmented reality.
+
+
+
+
+% Maps are great tools for effective communication about geographic space and
+% topology.  The first graphic forms of communication can be traced back to about
+% forty thousand years ago \autocite{Harley87}, in the Late Stone Age (Upper
+% Paleolithic), and represents important historical evidence of a cognitive
+% revolution happening in the human biology. Graphic representation of geographic
+% space in the form of maps connects the internal metaphysical models of human
+% minds (cognitive map) with the physical world. This connection enables
+% effective communication and reasoning about complex spatial and topological
+% structures and relationships. Hence, maps have for thousands of years been an
+% important catalyst for social cooperation, so much that it has become the topic
+% of the science that today is know as \emph{cartography}.
+%
+% Humans are storytelling animals, and for millennia people have been
+% communicating narratives by using natural language. The stories humans tell
+% each other contains descriptions of \enquote{things} and \enquote{happenings}.
+% More importantly, human stories describes the interaction between
+% \enquote{things} and \enquote{happenings} by depicting an ordered sequence of
+% causes and effects, constituting what we call \emph{causality}. The development
+% of causal reasoning is said to be the most significant advance in the evolution
+% of human cognition and is essential for ability to perceive time
+% \autocite{StuartFox15}. Causal cognition enables reasoning about events in the
+% past, as well as the future, which makes it possible to do strategic planning.
+% Thus, telling stories by using natural language enables even more effective
+% ways of cooperation because it lets humans share knowledge between individuals.
+%
+%
+% While maps are good for communicating geospatial topology, they are 
+% % TODO: Structural language and computer maps %
+%
+% Although the world we live in is very dynamic, topics in \acrshort{gis} and
+% \acrfull{gisc} research are largely concerned static representations of the
+% world. Well known conceptual data models such as \emph{raster} and
+% \emph{vector} formats are used to model spatial data in geographic space
+% (\emph{geospatial} data) irrespective of the existence of a temporal dimension
+% in the application data domain.
+%
+% Humans have been drawing geographic maps for thousands of years 
+%
+% Temporality is often neglected, because there is no need to represent time in a
+% static world view. This is unsurprising when w
+%
+% \section{Movement Representation and Modeling}
+%
+% \subsection{Movement in Geographic Space}
+%
+% % TODO: What is movement? %
+% Movement is a subcategory of \emph{change}, and can be modeled as a function of
+% time.\mymarginpar{spatio–temporal change} Specifically, movement is the change
+% of an objects spatial relations to other objects over time, i.e., movement is a
+% \emph{spatio–temporal} phenomenon. The emphasis in this work is on
+% \emph{geographical space}, meaning that that movement is discussed about
+% objects that are spatially related to the Earth, i.e. \emph{geospatial}
+% objects.
+%
+% %To elaborate, geographical space can be modelled by using geographic coordinate
+% %systems, where coordinates are often provided as tuples of numbers or symbols.
+% %For instance, a spherical (or ellipsoidal coordinate system) might provide
+% %coordinates as tuples of latitude and longitude; a map projection system might
+% %describe coordinates projected on a plane as $x$ and $y$ values; an
+% %earth–centered, earth–fixed (ECEF) system might describe coordinates as
+% %Cartesian coordinates in three dimensional space; and a geocode system might
+% %describe geographic entities using a single sequence of numbers or symbols,
+% %e.g. a postal code
+%
+% Although reality is highly dynamic, models and representations in
+% \acrfullpl{gis} and \acrfull{gisc} are dominated by static views of
+% geographic phenomena. In the literature this
+%
+% \textcite{Peuquet2001} explains that there are two basic types of change
+% relating to objects. The first type is change of location in space, i.e.
+% \emph{translation}. For instance the movement of a vehicle, pedestrian, or an
+% animal.  The second type is changing spatial extent, e.g. by growing, shrinking
+% or changing shape. Point objects have no spatial extent, and are thus only
+% subject to the first type of change, while higher–dimensional geometries can
+% exercise both types of change, either as discrete events or happening at the
+% same time. Examples are storm–systems, vegetation areas and land use.
+% % "dynamic" vs "static"
+% In addition, \textcite{Goodchild2007} presents a third dimension of
+% \todo{elaborate on Goodchild's third dimension of temporal variability}
+%
+%
+% While both types of changes can be perceived as
+% \enquote{movement}, only the former will be considered in the following.
+% Furthermore, the emphasis is constrained to movement of zero-dimensional
+% points, or \acrfullpl{mpo}.
+%
+% Considering an Euclidean vector space, the notion of movement as described
+% above, can be modeled as a specific type of Euclidean (or rigid) transformation
+% — namely \emph{translation}. Modeling translation in two dimension as a
+% function of time, can be written as:
+%
+% \begin{equation}\label{eq:translation}
+%   (x_0,y_0) \rightarrow (x_0 + a_t, y_0 + b_t)\text{,}
+% \end{equation}
+%
+% where $(x_0, y_0)$ are the original coordinates, and $(a_t, b_t)$ is the translation vector. \Cref{eq:translation} could also be written using vector notation:
+%
+% \begin{equation}\label{eq:trans_vector}
+%   \boldsymbol{x_0} \rightarrow \boldsymbol{x_0} + \boldsymbol{v_t}
+% \end{equation}
+%
+% Here, $\boldsymbol{v_t} = (a_t, b_t)$. \Cref{eq:translation,eq:trans_vector} are
+%
+% A more formal definition can be borrowed from the mathematical field of geometry.
+%
+% % Peuquet2001: Two basic types of change: Change in location in space, Change in
+% % spatial extent (growing, shrinking, changing shape).
+%
+% % Transformations of the Euclidean plane (Worboys2004, ch. 3)
